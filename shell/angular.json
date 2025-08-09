@@ -26,7 +26,8 @@
             "scripts": [],
             "vendorChunk": true,
             "commonChunk": true,
-            "namedChunks": true
+            "namedChunks": true,
+            "tsConfig": "tsconfig.app.json"
           }
         },
         "serve": {
@@ -38,7 +39,6 @@
       }
     }
   },
-  "defaultProject": "shell",
   "cli": {
     "analytics": "2e7d999a-44cf-4f35-89f3-5f6f64fd4d97"
   }

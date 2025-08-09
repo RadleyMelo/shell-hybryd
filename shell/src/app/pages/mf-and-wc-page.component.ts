@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
   selector: 'app-mf-and-wc-page',
@@ -18,7 +18,8 @@ import { Component, AfterViewInit, ElementRef } from '@angular/core';
         <div id="wcHost"></div>
       </section>
     </div>
-  `
+  `,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MfAndWcPageComponent implements AfterViewInit {
   constructor(private host: ElementRef) {}

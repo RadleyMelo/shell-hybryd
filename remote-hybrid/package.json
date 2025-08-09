@@ -6,7 +6,7 @@
     "serve:mf": "ng serve --configuration=mf --port 4201",
     "serve:wc": "ng serve --configuration=wc --port 4202",
     "build:mf": "ng build --configuration=mf",
-    "build:wc": "ng build --configuration=wc"
+    "build:wc": "ng run remote-hybrid:build-wc"
   },
   "dependencies": {
     "@angular/animations": "~16.2.0",
@@ -28,7 +28,7 @@
     "@angular-devkit/build-angular": "~16.2.0",
     "@angular/cli": "~16.2.0",
     "@angular/compiler-cli": "~16.2.0",
-    "ngx-build-plus": "^17.0.0",
+    "ngx-build-plus": "^16.0.0",
     "typescript": "~5.1.6"
   }
 }
