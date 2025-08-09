@@ -8,7 +8,7 @@
       "sourceRoot": "src",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/remote-hybrid",
             "index": "src/index.html",
@@ -24,7 +24,8 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "tsConfig": "tsconfig.app.json"
+            "tsConfig": "tsconfig.app.json",
+            "extraWebpackConfig": "webpack.config.cjs"
           },
           "configurations": {
             "mf": {
@@ -58,14 +59,18 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "configurations": {
             "mf": {
-              "browserTarget": "remote-hybrid:build:mf"
+              "browserTarget": "remote-hybrid:build:mf",
+              "extraWebpackConfig": "webpack.config.cjs"
             },
             "wc": {
               "browserTarget": "remote-hybrid:build-wc"
             }
+          },
+          "options": {
+            "browserTarget": "remote-hybrid:build"
           }
         }
       }
