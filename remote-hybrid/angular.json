@@ -23,7 +23,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "tsConfig": "tsconfig.app.json"
           },
           "configurations": {
             "mf": {
@@ -31,19 +32,29 @@
               "vendorChunk": true,
               "commonChunk": true,
               "namedChunks": true
-            },
-            "wc": {
-              "builder": "ngx-build-plus:browser",
-              "outputHashing": "none",
-              "main": "src/main.wc.ts",
-              "extraWebpackConfig": "extra-webpack.wc.cjs",
-              "fileReplacements": [
-                {
-                  "replace": "src/app/bootstrap-mode.ts",
-                  "with": "src/app/bootstrap-mode.wc.ts"
-                }
-              ]
             }
+          }
+        },
+        "build-wc": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/remote-hybrid",
+            "index": "src/index.html",
+            "main": "src/main.wc.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": [],
+            "tsConfig": "tsconfig.app.json",
+            "extraWebpackConfig": "extra-webpack.wc.cjs",
+            "outputHashing": "none"
           }
         },
         "serve": {
@@ -53,14 +64,13 @@
               "browserTarget": "remote-hybrid:build:mf"
             },
             "wc": {
-              "browserTarget": "remote-hybrid:build:wc"
+              "browserTarget": "remote-hybrid:build-wc"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "remote-hybrid",
   "cli": {
     "analytics": "83aee6a2-5096-43ae-b658-e3720f859072"
   }
