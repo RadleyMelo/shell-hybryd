@@ -39,6 +39,7 @@ export class MfAndWcPageComponent implements AfterViewInit {
       if (document.querySelector(`script[data-wc-src="${src}"]`)) return resolve();
       const s = document.createElement('script');
       s.src = src;
+      s.type = 'module';
       s.async = true;
       s.setAttribute('data-wc-src', src);
       s.onload = () => resolve();
