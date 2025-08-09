@@ -8,7 +8,7 @@
       "sourceRoot": "src",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "ngx-build-plus:browser",
           "options": {
             "outputPath": "dist/shell",
             "index": "src/index.html",
@@ -27,13 +27,15 @@
             "vendorChunk": true,
             "commonChunk": true,
             "namedChunks": true,
-            "tsConfig": "tsconfig.app.json"
+            "tsConfig": "tsconfig.app.json",
+            "extraWebpackConfig": "webpack.config.cjs"
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "ngx-build-plus:dev-server",
           "options": {
-            "browserTarget": "shell:build"
+            "browserTarget": "shell:build",
+            "extraWebpackConfig": "webpack.config.cjs"
           }
         }
       }
