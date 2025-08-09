@@ -1,0 +1,13 @@
+{
+  "name": "angular16-mfe-hybrid-standalone-workspace",
+  "private": true,
+  "workspaces": [
+    "shell",
+    "remote-hybrid"
+  ],
+  "scripts": {
+    "postinstall": "echo 'Tip: Ensure @angular/cli@16 is installed globally or use npx ng v16'",
+    "build": "npm run -w shell build && npm run -w remote-hybrid build:mf && npm run -w remote-hybrid build:wc",
+    "start": "echo 'Use: npm run -w remote-hybrid serve:mf | npm run -w remote-hybrid serve:wc | npm run -w shell start'"
+  }
+}

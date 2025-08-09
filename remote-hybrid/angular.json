@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json.schemastore.org/angular.json",
+  "version": 1,
+  "projects": {
+    "remote-hybrid": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/remote-hybrid",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "mf": {
+              "outputHashing": "none",
+              "vendorChunk": true,
+              "commonChunk": true,
+              "namedChunks": true
+            },
+            "wc": {
+              "builder": "ngx-build-plus:browser",
+              "outputHashing": "none",
+              "main": "src/main.wc.ts",
+              "extraWebpackConfig": "extra-webpack.wc.cjs",
+              "fileReplacements": [
+                {
+                  "replace": "src/app/bootstrap-mode.ts",
+                  "with": "src/app/bootstrap-mode.wc.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "mf": {
+              "browserTarget": "remote-hybrid:build:mf"
+            },
+            "wc": {
+              "browserTarget": "remote-hybrid:build:wc"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "remote-hybrid",
+  "cli": {
+    "analytics": "83aee6a2-5096-43ae-b658-e3720f859072"
+  }
+}
