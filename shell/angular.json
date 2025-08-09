@@ -20,15 +20,18 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": [],
             "scripts": [],
             "vendorChunk": true,
             "commonChunk": true,
             "namedChunks": true,
             "tsConfig": "tsconfig.app.json",
             "extraWebpackConfig": "webpack.config.cjs"
+          },
+          "configurations": {
+            "development": {
+              "extractCss": true
+            }
           }
         },
         "serve": {
