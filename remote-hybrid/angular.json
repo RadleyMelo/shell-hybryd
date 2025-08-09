@@ -20,14 +20,15 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": [],
             "scripts": [],
             "tsConfig": "tsconfig.app.json",
             "extraWebpackConfig": "webpack.config.cjs"
           },
           "configurations": {
+            "development": {
+              "extractCss": true
+            },
             "mf": {
               "outputHashing": "none",
               "vendorChunk": true,
@@ -49,13 +50,16 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "styles": [],
             "scripts": [],
             "tsConfig": "tsconfig.app.json",
             "extraWebpackConfig": "extra-webpack.wc.cjs",
             "outputHashing": "none"
+          },
+          "configurations": {
+            "development": {
+              "extractCss": true
+            }
           }
         },
         "serve": {
